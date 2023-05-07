@@ -1,5 +1,5 @@
-import { makeExecutableSchema } from 'graphql-tools';
-import { graphql } from 'graphql';
+import { makeExecutableSchema } from "graphql-tools";
+import { graphql } from "graphql";
 
 const typeDefs = `
 schema {
@@ -11,14 +11,14 @@ type Query {
 `;
 
 const resolvers = {
-    Query: {
-        hello: () => 'World'
-    }
-}
+  Query: {
+    hello: () => "World",
+  },
+};
 
-const schema = makeExecutableSchema({ typeDefs, resolvers })
+const schema = makeExecutableSchema({ typeDefs, resolvers });
 
-const query = process.argv[2] 
+const query = process.argv[2];
 
 // argv is an array gives us the following from the command line:
 // argv = [
@@ -29,6 +29,6 @@ const query = process.argv[2]
 
 // Since we want the query, we specify the indice of what we want
 
-graphql(schema,query).then(result => {
-    console.log(JSON.stringify(result,null, 2))
-})
+graphql(schema, query).then((result) => {
+  console.log(JSON.stringify(result, null, 2));
+});
